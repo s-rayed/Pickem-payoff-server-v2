@@ -1,0 +1,27 @@
+{
+  "name": "pickem-payoff-server-v2",
+  "version": "1.0.0",
+  "description": "* Copying over Read me from Version 1",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s-rayed/Pickem-payoff-server-v2.git"
+  },
+  "author": "Ray",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s-rayed/Pickem-payoff-server-v2/issues"
+  },
+  "homepage": "https://github.com/s-rayed/Pickem-payoff-server-v2#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.12",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.12.1"
+  }
+}
