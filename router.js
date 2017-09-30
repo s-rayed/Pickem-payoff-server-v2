@@ -11,7 +11,7 @@ module.exports = function(app) {
   // });
   app.post('/signup', Authentication.signup);
   app.get('/', requireAuth, function(req, res) {
-    res.send({ hi: 'there' });
+    res.send({ message: 'You can have whatever you like' });
   });
   app.post('/signin', requireSignin, Authentication.signin);
 }
