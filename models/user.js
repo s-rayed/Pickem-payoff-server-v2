@@ -1,9 +1,10 @@
 const mongoose        = require('mongoose');
 const Schema          = mongoose.Schema;
+const bcrypt          = require('bcrypt-nodejs');
 
 // Define the model
 const userSchema      = new Schema({
-  email: type: String, unique: true, lowerCase: true;
+  email: { type: String, unique: true, lowerCase: true },
   password: String
 });
 
@@ -23,10 +24,16 @@ userSchema.pre('save', function(next) {
   });
 });
 
+userSchema.methods.comparePassword = function(candidatePassword, callback) {
+  bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+    if (err) return callback(err);
+    callback(null, isMatch);
+  });
+}
 
 
 // Model class
-const ModelClass     = mongoose.model('user', userSchema);
+const ModelClass      = mongoose.model('user', userSchema);
 
 // Export the model class
-module.exports = ModelClass;
+module.exports        = ModelClass;
